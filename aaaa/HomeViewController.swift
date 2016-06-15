@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseAuth
 import FBSDKCoreKit
+import FirebaseStorage
 class HomeViewController: UIViewController {
 
 //Mark properties
@@ -58,6 +59,52 @@ class HomeViewController: UIViewController {
             let data = NSData(contentsOfURL: photoUrl!)
             self.uiimivProfilePic.image = UIImage (data: data!)
             
+            
+            
+            /// firebase storage for facebook profile pictures
+            
+            let storage = FIRStorage.storage()
+            
+            //Refer your storage service
+            
+            let storageRef = storage.referenceForURL("gs://aaaa-3d620.appspot.com")
+            
+            var profilePic = FBSDKGraphRequest(graphPath: "me/picture", parameters:
+                ["height":300,"width":"300","redirect":false ],HTTPMethod: "GET")
+            
+            profilePic.startWithCompletionHandler({(connection, result,error) -> Void in
+                
+                if (error == nil)
+                {
+                    let dictionary = result as? NSDictionary
+                    let data = dictionary?.objectForKey("data")
+                    
+                    let urlPic = (data?.objectForKey("url"))!as! String
+                    
+                    if let imagedata = NSData(contentsOfURL: NSURL(string:urlPic)!)
+                    {
+                        let profilePicRef = storageRef.child(user.uid+"/profile_pic.jpg")
+                        
+                        let uploadTask = profilePicRef.putData(imagedata,metadata:nil){metadata,error in
+                            if(error == nil)
+                    {
+                                let downlodUrl = metadata!.downloadURL
+                }
+                            else
+                            {
+                                print("Error in downloading Image")
+                            }
+                        }
+                    self.uiimivProfilePic.image = UIImage(data: imagedata)
+                    }
+                }
+                    // Handle the result
+            })
+
+                
+                
+                
+                
             
         } else {
             // No user is signed in.
