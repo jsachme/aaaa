@@ -56,8 +56,8 @@ class HomeViewController: UIViewController {
             let uid = user.uid;
             
             self.uilname.text = name
-            let data = NSData(contentsOfURL: photoUrl!)
-            self.uiimivProfilePic.image = UIImage (data: data!)
+           // let data = NSData(contentsOfURL: photoUrl!)
+           /// self.uiimivProfilePic.image = UIImage (data: data!)
             
             
             
@@ -68,6 +68,28 @@ class HomeViewController: UIViewController {
             //Refer your storage service
             
             let storageRef = storage.referenceForURL("gs://aaaa-3d620.appspot.com")
+            let profilePicRef = storageRef.child(user.uid+"/profile_pic.jpg")
+            // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+            profilePicRef.dataWithMaxSize(1 * 1024 * 1024) { (data, error) -> Void in
+                if (error != nil) { print("Unable to download image")
+                    // Uh-oh, an error occurred!
+                }
+                else
+                    
+                {
+                    if (data != nil)
+                    {
+                        print("User already has image from FaceBook")
+                        self.uiimivProfilePic.image = UIImage (data: data!)
+                    }
+                    // Data for "images/island.jpg" is returned
+                    // ... let islandImage: UIImage! = UIImage(data: data!)
+                }
+            }
+            
+            if (self.uiimivProfilePic.image == nil) {
+                
+           
             
             var profilePic = FBSDKGraphRequest(graphPath: "me/picture", parameters:
                 ["height":300,"width":"300","redirect":false ],HTTPMethod: "GET")
@@ -83,7 +105,7 @@ class HomeViewController: UIViewController {
                     
                     if let imagedata = NSData(contentsOfURL: NSURL(string:urlPic)!)
                     {
-                        let profilePicRef = storageRef.child(user.uid+"/profile_pic.jpg")
+                        
                         
                         let uploadTask = profilePicRef.putData(imagedata,metadata:nil){metadata,error in
                             if(error == nil)
@@ -100,6 +122,10 @@ class HomeViewController: UIViewController {
                 }
                     // Handle the result
             })
+            
+            
+            //end of download profile picture loop
+            }
 
                 
                 

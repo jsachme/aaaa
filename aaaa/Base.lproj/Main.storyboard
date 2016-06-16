@@ -39,7 +39,7 @@
             </objects>
             <point key="canvasLocation" x="257.5" y="298.5"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Home-->
         <scene sceneID="L9A-RM-i8g">
             <objects>
                 <viewController storyboardIdentifier="HomeView" id="Im3-V0-gqI" customClass="HomeViewController" customModule="aaaa" customModuleProvider="target" sceneMemberID="viewController">
@@ -92,6 +92,7 @@
                             <constraint firstItem="brs-Lf-hEN" firstAttribute="leading" secondItem="5cM-cZ-Xxa" secondAttribute="leadingMargin" constant="-3" id="vpp-Tk-81D"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="home" id="Zwl-ec-RdG"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="uiimivProfilePic" destination="bEd-Uu-NPN" id="lei-yy-hlx"/>
@@ -100,7 +101,73 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M1E-6Y-Hz0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="694.5" y="298.5"/>
+            <point key="canvasLocation" x="1506.5" y="298.5"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="1lB-Hr-kPv">
+            <objects>
+                <tableViewController id="0RD-0T-rOx" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="qK6-cB-0tR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="kHQ-Vn-Wtn">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kHQ-Vn-Wtn" id="zJ1-gf-Cs6">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IhR-jv-21t">
+                                            <rect key="frame" x="8" y="5" width="359" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="IhR-jv-21t" firstAttribute="top" secondItem="zJ1-gf-Cs6" secondAttribute="topMargin" constant="-3" id="IYa-3f-btL"/>
+                                        <constraint firstItem="IhR-jv-21t" firstAttribute="leading" secondItem="zJ1-gf-Cs6" secondAttribute="leadingMargin" id="Oq2-AV-GMP"/>
+                                        <constraint firstItem="IhR-jv-21t" firstAttribute="bottom" secondItem="zJ1-gf-Cs6" secondAttribute="bottomMargin" id="aHq-LK-AHM"/>
+                                        <constraint firstItem="IhR-jv-21t" firstAttribute="trailing" secondItem="zJ1-gf-Cs6" secondAttribute="trailingMargin" id="f83-mC-cW4"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="0RD-0T-rOx" id="PKC-Qb-iTI"/>
+                            <outlet property="delegate" destination="0RD-0T-rOx" id="qKK-H7-iNi"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Profile" image="setting gears" id="koz-G3-ghu"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Daz-tb-8fy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1177.5" y="1238.5"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ImZ-Wp-8Rv">
+            <objects>
+                <tabBarController storyboardIdentifier="TabBarControllerView" automaticallyAdjustsScrollViewInsets="NO" id="X12-7L-F0q" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="1Rk-vq-NFN">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Im3-V0-gqI" kind="relationship" relationship="viewControllers" id="ZtD-TE-UQ3"/>
+                        <segue destination="0RD-0T-rOx" kind="relationship" relationship="viewControllers" id="dZe-dJ-hea"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aZ1-DM-aZ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="807" y="298"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="home" width="32" height="32"/>
+        <image name="setting gears" width="32" height="32"/>
+    </resources>
 </document>

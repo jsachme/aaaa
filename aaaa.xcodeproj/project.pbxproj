@@ -18,6 +18,8 @@
 		9A860A901D10CBD800F48DDE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A860A8F1D10CBD800F48DDE /* HomeViewController.swift */; };
 		9AAB66E71D10732C004736B2 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AAB66E61D10732C004736B2 /* FBSDKCoreKit.framework */; };
 		9AAB66E91D107331004736B2 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AAB66E81D107331004736B2 /* FBSDKLoginKit.framework */; };
+		9ABDDEB01D121B5B00778363 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABDDEAF1D121B5B00778363 /* ProfileTableViewController.swift */; };
+		9ABDDEB21D121D3F00778363 /* TextInputTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABDDEB11D121D3F00778363 /* TextInputTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		9A860A8F1D10CBD800F48DDE /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9AAB66E61D10732C004736B2 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		9AAB66E81D107331004736B2 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		9ABDDEAF1D121B5B00778363 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		9ABDDEB11D121D3F00778363 /* TextInputTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInputTableView.swift; sourceTree = "<group>"; };
 		9EC7A87A254ADAF2F1C5986D /* Pods-aaaa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aaaa.release.xcconfig"; path = "Pods/Target Support Files/Pods-aaaa/Pods-aaaa.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,15 +87,17 @@
 		9A36266A1D10701C00CCBC7A /* aaaa */ = {
 			isa = PBXGroup;
 			children = (
+				9A3626751D10701C00CCBC7A /* Assets.xcassets */,
 				9A36266B1D10701C00CCBC7A /* AppDelegate.swift */,
 				9A36266D1D10701C00CCBC7A /* ViewController.swift */,
-				9A36266F1D10701C00CCBC7A /* Main.storyboard */,
 				9A860A8F1D10CBD800F48DDE /* HomeViewController.swift */,
-				9A3626751D10701C00CCBC7A /* Assets.xcassets */,
+				9ABDDEAF1D121B5B00778363 /* ProfileTableViewController.swift */,
+				9A36266F1D10701C00CCBC7A /* Main.storyboard */,
+				9ABDDEB11D121D3F00778363 /* TextInputTableView.swift */,
 				9A3626771D10701C00CCBC7A /* LaunchScreen.storyboard */,
 				9A36267A1D10701C00CCBC7A /* Info.plist */,
-				9A3626721D10701C00CCBC7A /* aaaa.xcdatamodeld */,
 				9A3626801D10707300CCBC7A /* GoogleService-Info.plist */,
+				9A3626721D10701C00CCBC7A /* aaaa.xcdatamodeld */,
 			);
 			path = aaaa;
 			sourceTree = "<group>";
@@ -230,7 +236,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A36266E1D10701C00CCBC7A /* ViewController.swift in Sources */,
+				9ABDDEB01D121B5B00778363 /* ProfileTableViewController.swift in Sources */,
 				9A36266C1D10701C00CCBC7A /* AppDelegate.swift in Sources */,
+				9ABDDEB21D121D3F00778363 /* TextInputTableView.swift in Sources */,
 				9A3626741D10701C00CCBC7A /* aaaa.xcdatamodeld in Sources */,
 				9A860A901D10CBD800F48DDE /* HomeViewController.swift in Sources */,
 			);

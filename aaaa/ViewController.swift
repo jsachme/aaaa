@@ -29,7 +29,7 @@ var loginButton: FBSDKLoginButton = FBSDKLoginButton()
                 //move the user to another screen
                 
                 let mainStoryboard: UIStoryboard = UIStoryboard(name:"Main",bundle: nil )
-                let HomeViewController: UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("HomeView")
+                let HomeViewController: UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("TabBarControllerView")
                 self.presentViewController(HomeViewController, animated: true, completion: nil)
             }
             
